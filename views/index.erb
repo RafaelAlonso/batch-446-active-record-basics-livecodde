@@ -1,0 +1,23 @@
+<h1>These are our toppest restaurants!</h1>
+
+<h2>Create a new restaurant!</h2>
+<form action="/new_restaurant" method="post">
+  <label for="">Restaurant name</label>
+  <input type="text" name="name">
+
+  <label for="">Restaurant address</label>
+  <input type="text" name="address">
+
+  <label for="">Restaurant rating</label>
+  <input type="text" name="rating">
+
+  <input type="submit">
+</form>
+
+<ul>
+  <!-- para cada restaurante no BD, gerar uma <li>Nome do restaurante</li> -->
+  <% @restaurants.each do |restaurant| %>
+    <li><%= restaurant.name %></li>
+    <a href="/detalhes/<%= restaurant.id %>">Ver detalhes desse restaurante</a>
+  <% end %>
+</ul>
